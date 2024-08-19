@@ -33,8 +33,12 @@ function fetchData() {
 
 button.addEventListener("click", () => {
   button.disabled = true;
-  adviceData.innerHTML = "Please wait a moment..";
-  dice.classList.add("hidden");
-  loader.classList.remove("hidden");
+  setTimeout(() => {
+    adviceData.innerHTML = "Please wait a moment...";
+    adviceId.innerHTML = "...";
+    dice.classList.add("hidden");
+    loader.classList.remove("hidden");
+  }),
+    3000;
   fetchData();
 });
